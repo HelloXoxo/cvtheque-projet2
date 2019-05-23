@@ -20,7 +20,7 @@ const flash      = require("connect-flash");
 
 
 mongoose
-  .connect('mongodb://localhost/cvtheque-projet2', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI|| 'mongodb://localhost/cvtheque-projet2', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
